@@ -1,0 +1,3 @@
+rootProject.name = 'opencv-native'
+
+include 'linux-x86_64'
