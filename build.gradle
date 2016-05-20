@@ -11,7 +11,7 @@ subprojects {
     task jar(type: Jar) {
         from project.file('src')
         destinationDir project.file('build')
-        baseName 'opevcv-native'
+        baseName projectIds.name
         version project.version
         classifier project.name
     }
