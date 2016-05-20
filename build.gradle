@@ -1,18 +1,17 @@
-ext.projectIds = ['group': 'org.opencv', 'name': 'opencv-native', 'version': '3.1.0']
+ext.projectCord = [group: 'org.opencv', name: 'opencv-native', version: '3.1.0']
 
 repositories {
     mavenCentral()
 }
 
-subprojects {
-    group = projectIds.group
-    version = projectIds.version
+group = projectCord.group
+version = projectCord.version
 
-    task jar(type: Jar) {
-        from project.file('src')
-        destinationDir project.file('build')
-        baseName projectIds.name
-        version project.version
+subprojects {
+    apply plugin: 'java'
+    jar {
+        baseName projectCord.name
+        version projectCord.version
         classifier project.name
     }
 }
